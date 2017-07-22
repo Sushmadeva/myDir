@@ -1,22 +1,43 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<html>
+<html ng-app="archive">
 <head>
-<title>Upload Multiple File Request Page</title>
+<meta charset="utf8" />
+<title>File Upload</title>
+<link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-	<form method="POST" action="uploadMultipleFile" enctype="multipart/form-data">
-		File1 to upload: <input type="file" name="file">
- 
-		Name1: <input type="text" name="name">
- 
- 
-		File2 to upload: <input type="file" name="file">
- 
-		Name2: <input type="text" name="name">
- 
-
-		<input type="submit" value="upload"> Press here to upload the file!
-	</form>
+	<div id="wrap">
+		<div id="header">
+			<h1>File Upload</h1>
+		</div>
+		
+	</div>
+		<div id="sidebar" ng-controller="UploadCtrl">
+			<h2>Upload</h2>
+			<table class="table">
+				<tr>
+					<td>Name</td>
+				</tr>
+				<tr>
+					<td><input type="text" ng-model="name"></td>
+				</tr>
+				<tr>
+					<td>Date</td>
+				</tr>
+				<tr>
+					<td><input type="text" ng-model="date"></td>
+				</tr>
+				<tr>
+					<td><input type="file" class="custom-file-input" file-model="myFile"></td>
+					
+				</tr>
+				<tr>
+					<td><button ng-click="uploadFile()">Upload</button></td>
+				</tr>
+			</table>
+		</div>
+		
+	</div>
+	<script src="lib/angular/angular-1.2.16.js"></script>
+	<script src="upload.js"></script>
 </body>
 </html>
