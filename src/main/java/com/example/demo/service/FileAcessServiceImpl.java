@@ -55,7 +55,7 @@ public class FileAcessServiceImpl implements IFileAccessService,Serializable {
         return fileDataAccess;
     }
 
-    public void setDocumentDao(IFiledataAccess fileDataAccess) {
+    public void setFileDataAccess(IFiledataAccess fileDataAccess) {
     	fileDataAccess = fileDataAccess;
     }
 }
